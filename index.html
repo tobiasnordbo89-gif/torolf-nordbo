@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Torolf Nordbø – Han Innante. Standup, musikalsk humor, visekonsertar, revyar og inspirasjon for firma og lag.">
+    <title>Torolf Nordbø | Han Innante</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts: Playfair Display + Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&display=swap');
+        
+        :root {
+            --amber: #c9a66b;
+        }
+        
+        .tail-container * {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('sporavaar_u_tekstKutta5mb(1).jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .nav-link {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-link:hover {
+            color: #c9a66b;
+            transform: translateY(-1px);
+        }
+        
+        .section-header {
+            position: relative;
+        }
+        
+        .section-header::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: #c9a66b;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .mobile-menu {
+            animation: slideDown 0.3s ease forwards;
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="tail-container">
+    <!-- NAVBAR -->
+    <nav class="bg-slate-950 border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-10 h-10 bg-amber-400 rounded-full flex items-center justify-center text-slate-950 font-bold text-2xl">TN</div>
+                    <div>
+                        <span class="heading-font text-3xl tracking-tighter text-white">TOROLF</span>
+                        <span class="heading-font text-3xl tracking-tighter text-[#c9a66b]">NORDBØ</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-x-8 text-white text-lg">
+                    <a href="#hjem" class="nav-link">Hjem</a>
+                    <a href="#konsertar" class="nav-link">Konsertar</a>
+                    <a href="#humoropplegg" class="nav-link">Humoropplegg</a>
+                    <a href="#revyar" class="nav-link">Revyar</a>
+                    <a href="#booking" class="nav-link">Booking</a>
+                    <a href="#biografi" class="nav-link">Biografi</a>
+                    <a href="#pressebilder" class="nav-link">Pressebilder</a>
+                    <a href="#musikk" class="nav-link">Musikk / Videoar</a>
+                    <a href="#folkbrothers" class="nav-link">Folk Brothers</a>
+                    <a href="#bestilling" class="nav-link">Bestilling CD/DVD/Bøker</a>
+                    <a href="#teknisk" class="nav-link">Teknisk</a>
+                </div>
+
+                <!-- Hamburger -->
+                <button id="hamburger" class="lg:hidden text-3xl text-white focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-slate-950 border-t border-slate-800 px-6 py-6 mobile-menu">
+            <div class="flex flex-col gap-y-6 text-white text-xl">
+                <a href="#hjem" onclick="toggleMobileMenu()" class="nav-link">Hjem</a>
+                <a href="#konsertar" onclick="toggleMobileMenu()" class="nav-link">Konsertar</a>
+                <a href="#humoropplegg" onclick="toggleMobileMenu()" class="nav-link">Humoropplegg</a>
+                <a href="#revyar" onclick="toggleMobileMenu()" class="nav-link">Revyar</a>
+                <a href="#booking" onclick="toggleMobileMenu()" class="nav-link">Booking</a>
+                <a href="#biografi" onclick="toggleMobileMenu()" class="nav-link">Biografi</a>
+                <a href="#pressebilder" onclick="toggleMobileMenu()" class="nav-link">Pressebilder</a>
+                <a href="#musikk" onclick="toggleMobileMenu()" class="nav-link">Musikk / Videoar</a>
+                <a href="#folkbrothers" onclick="toggleMobileMenu()" class="nav-link">Folk Brothers</a>
+                <a href="#bestilling" onclick="toggleMobileMenu()" class="nav-link">Bestilling CD/DVD/Bøker</a>
+                <a href="#teknisk" onclick="toggleMobileMenu()" class="nav-link">Teknisk</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hjem" class="hero-bg h-screen flex items-center relative">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center text-white">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="heading-font text-7xl md:text-8xl lg:text-9xl tracking-tighter leading-none mb-4">TOROLF NORDBØ</h1>
+                <p class="text-4xl md:text-5xl text-[#c9a66b] heading-font mb-8">Han Innante</p>
+                <p class="text-2xl md:text-3xl max-w-md mx-auto leading-tight">
+                    Standup • Musikalsk humor • Visekonsertar • Revyar • Inspirasjon for firma og lag
+                </p>
+                
+                <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#booking" 
+                       class="inline-flex items-center justify-center bg-[#c9a66b] hover:bg-amber-300 text-slate-950 font-medium text-xl px-10 py-5 rounded-full transition-all">
+                        Book Torolf nå
+                        <i class="fa-solid fa-arrow-right ml-3"></i>
+                    </a>
+                    <a href="#musikk" 
+                       class="inline-flex items-center justify-center border-2 border-white hover:bg-white hover:text-slate-950 font-medium text-xl px-10 py-5 rounded-full transition-all">
+                        Se videoar
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white flex flex-col items-center">
+            <p class="text-sm tracking-widest mb-2">SCROLL</p>
+            <i class="fa-solid fa-chevron-down animate-bounce text-3xl"></i>
+        </div>
+    </section>
+
+    <!-- KONSERTAR & OPPLEGG -->
+    <section id="konsertar" class="py-24 bg-slate-950">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <h2 class="section-header heading-font text-5xl text-center mb-16 text-white">Konsertar & Opplegg</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-900 p-8 rounded-3xl hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-guitar text-4xl text-[#c9a66b] mb-6"></i>
+                    <h3 class="text-2xl font-medium mb-3">Visekonsertar</h3>
+                    <p class="text-slate-300">Torolf aleine eller med ein eller fleire musikarar. Reine visekonsertar eller kombinert med standup.</p>
+                </div>
+                <div class="bg-slate-900 p-8 rounded-3xl hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-microphone text-4xl text-[#c9a66b] mb-6"></i>
+                    <h3 class="text-2xl font-medium mb-3">Blanda program</h3>
+                    <p class="text-slate-300">Standup med Han Innante + kort humoristisk visekåseri med Torolf Nordbø. Ev. immitasjons-quiz.</p>
+                </div>
+                <div class="bg-slate-900 p-8 rounded-3xl hover:scale-105 transition-transform">
+                    <img src="20130821-JLA_5744.jpg" alt="Torolf med gitar" class="w-full aspect-video object-cover rounded-2xl mb-6">
+                    <h3 class="text-2xl font-medium mb-3">Konsert med band</h3>
+                    <p class="text-slate-300">Full konsert med gitar, mandolin og vokal – høg energi og lattergaranti.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HUMOROPPLEGG -->
+    <section id="humoropplegg" class="py-24 bg-white text-slate-950">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <h2 class="section-header heading-font text-5xl text-center mb-16">Humoropplegg</h2>
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-2xl leading-relaxed">
+                    Standup, musikalske humorshow m/ «Han Innante» ev. m/ kamerattar; «Sjur», «Farbror Luddvald», Rockvald m/fleire.
+                </p>
+                <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <img src="P1370252.jpeg" alt="Scene" class="rounded-3xl shadow-xl">
+                    <img src="HI Sjur900kb PSværtKutta-kopi.jpeg" alt="Folk Brothers" class="rounded-3xl shadow-xl">
+                    <img src="A241021HiSjFlRo5613.jpeg" alt="Band" class="rounded-3xl shadow-xl">
+                    <img src="HiFramover2600mbKutta.jpeg" alt="Torolf" class="rounded-3xl shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVYAR -->
+    <section id="revyar" class="py-24 bg-slate-950 text-white">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <h2 class="section-header heading-font text-5xl text-center mb-12">Revyar</h2>
+            <p class="text-3xl text-center max-w-3xl mx-auto">Torolf Nordbø har lang erfaring med revyar – både som skuespiller og musikalsk drivkraft. Kontakt oss for tilpassa revy-opplegg!</p>
+            <div class="text-center mt-16">
+                <a href="#booking" class="inline-block bg-[#c9a66b] text-slate-950 px-12 py-6 rounded-full text-2xl font-medium hover:bg-amber-300">Bestill revy i dag</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING CTA -->
+    <section id="booking" class="py-28 bg-gradient-to-br from-slate-900 to-slate-950 text-white">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 text-center">
+            <h2 class="heading-font text-6xl mb-8">Klar for ein kveld med latter og musikk?</h2>
+            <p class="text-3xl mb-12">Book Torolf Nordbø – Han Innante – i dag</p>
+            <a href="mailto:torolf@innante.no" class="inline-flex items-center bg-[#c9a66b] hover:bg-amber-300 text-slate-950 text-2xl px-16 py-7 rounded-3xl font-medium">
+                Send forespørsel <i class="fa-solid fa-paper-plane ml-4"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- BIOGRAFI -->
+    <section id="biografi" class="py-24 bg-white text-slate-950">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <img src="TorolfCcBilde.jpeg" alt="Torolf Nordbø portrett" class="rounded-3xl shadow-2xl">
+                </div>
+                <div class="lg:col-span-7">
+                    <h2 class="section-header heading-font text-5xl mb-8">Kort biografi</h2>
+                    <p class="text-xl leading-relaxed text-slate-600">
+                        Torolf Nordbø, kjent som «Han Innante», er ein allsidig artist frå Finnøy. Han kombinerer standup, musikalsk humor, visekonsertar og revyar på ein unik måte. Torolf har gitt ut fleire CD-ar, skrivne bøker og er ein ettertrakta underhaldar for både private og bedrifter.
+                    </p>
+                    <div class="mt-12 flex gap-8">
+                        <div>
+                            <div class="text-[#c9a66b] text-sm">Bøker</div>
+                            <p class="font-medium">"Snakk mindre, sei meir" og "Sunt bondevett"</p>
+                        </div>
+                        <div>
+                            <div class="text-[#c9a66b] text-sm">Kjennetegn</div>
+                            <p class="font-medium">Humor, musikk og ekte bondevisdom</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRESSEBILDER -->
+    <section id="pressebilder" class="py-24 bg-slate-950">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <h2 class="section-header heading-font text-5xl text-white text-center mb-16">Pressebilder</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <img src="TorolfCcBilde.jpeg" alt="Torolf Nordbø" class="rounded-3xl hover:scale-105 transition-transform cursor-pointer">
+                <img src="sporavaar_u_tekstKutta5mb(1).jpeg" alt="Torolf med gitar" class="rounded-3xl hover:scale-105 transition-transform cursor-pointer">
+                <img src="20130821-JLA_5744.jpg" alt="Torolf og kamerat" class="rounded-3xl hover:scale-105 transition-transform cursor-pointer">
+                <img src="P1370252.jpeg" alt="Sceneopptreden" class="rounded-3xl hover:scale-105 transition-transform cursor-pointer">
+                <img src="A241021HiSjFlRo5613.jpeg" alt="Folk Brothers" class="rounded-3xl hover:scale-105 transition-transform cursor-pointer">
+                <img src="HI Sjur900kb PSværtKutta-kopi.jpeg" alt="Folk Brothers" class="rounded-3xl hover:scale-105 transition-transform cursor-pointer">
+                <img src="HiFramover2600mbKutta.jpeg" alt="Torolf i hatt" class="rounded-3xl hover:scale-105 transition-transform cursor-pointer">
+            </div>
+        </div>
+    </section>
+
+    <!-- MUSIKK / VIDEOAR -->
+    <section id="musikk" class="py-24 bg-white text-slate-950">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <h2 class="section-header heading-font text-5xl text-center mb-12">Musikk / Videoar</h2>
+            <div class="max-w-4xl mx-auto aspect-video bg-black rounded-3xl overflow-hidden">
+                <iframe width="100%" height="100%" 
+                        src="https://www.youtube.com/embed/TJr36ng5lIU" 
+                        title="Torolf Nordbø: Han Innante" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+            <p class="text-center text-slate-500 mt-8">Fleire videoar finn du på YouTube-kanalen <a href="https://www.youtube.com/@haninnantetorolfnordb8555" target="_blank" class="text-[#c9a66b]">Han Innante – Torolf Nordbø</a></p>
+        </div>
+    </section>
+
+    <!-- FOLK BROTHERS -->
+    <section id="folkbrothers" class="py-24 bg-slate-950 text-white">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <h2 class="section-header heading-font text-5xl text-center mb-16">Folk Brothers</h2>
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <img src="A241021HiSjFlRo5613.jpeg" alt="Folk Brothers" class="rounded-3xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-2xl leading-relaxed">
+                        Torolf Nordbø saman med sine «Folk Brothers» – ein gal og musikalsk gjeng som leverer humor, energi og ekte folkemusikk i steampunk-stil.
+                    </p>
+                    <div class="mt-10 grid grid-cols-2 gap-6">
+                        <img src="HI Sjur900kb PSværtKutta-kopi.jpeg" alt="" class="rounded-2xl">
+                        <img src="HiFramover2600mbKutta.jpeg" alt="" class="rounded-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BESTILLING CD/DVD/BØKER -->
+    <section id="bestilling" class="py-24 bg-white text-slate-950">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <h2 class="section-header heading-font text-5xl text-center mb-16">Bestilling CD / DVD / Bøker</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="text-center">
+                    <img src="Bondevett_framsida700kb.jpeg" alt="Sunt Bondevett" class="mx-auto rounded-3xl mb-6 shadow-xl">
+                    <h3 class="text-2xl font-medium">Sunt Bondevett</h3>
+                    <p class="text-slate-500">Leif Arild Steen & Torolf Nordbø</p>
+                    <button onclick="alert('Send e-post til torolf@innante.no for bestilling!')" 
+                            class="mt-6 text-[#c9a66b] border border-[#c9a66b] hover:bg-[#c9a66b] hover:text-white px-8 py-3 rounded-2xl text-lg">Bestill</button>
+                </div>
+                <div class="text-center">
+                    <img src="TorolfCcBilde.jpeg" alt="Snakk mindre, sei meir" class="mx-auto rounded-3xl mb-6 shadow-xl opacity-90">
+                    <h3 class="text-2xl font-medium">Snakk mindre, sei meir</h3>
+                    <p class="text-slate-500">Leif Arild Steen & Torolf Nordbø</p>
+                    <button onclick="alert('Send e-post til torolf@innante.no for bestilling!')" 
+                            class="mt-6 text-[#c9a66b] border border-[#c9a66b] hover:bg-[#c9a66b] hover:text-white px-8 py-3 rounded-2xl text-lg">Bestill</button>
+                </div>
+                <div class="text-center bg-slate-100 p-8 rounded-3xl">
+                    <h3 class="text-2xl font-medium mb-6">CD & DVD</h3>
+                    <p class="mb-8">Heile diskografien til Torolf Nordbø / Han Innante er tilgjengeleg for bestilling.</p>
+                    <a href="#booking" class="block text-center bg-[#c9a66b] text-slate-950 py-5 rounded-3xl text-xl font-medium">Sjå heile katalogen →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEKNISK -->
+    <section id="teknisk" class="py-24 bg-slate-950 text-white">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <h2 class="section-header heading-font text-5xl text-center mb-12">Teknisk info</h2>
+            <div class="max-w-2xl mx-auto text-lg leading-relaxed">
+                <p class="mb-8">Torolf reiser med eige lydanlegg og lys dersom det er ønskjeleg. Standard rider inkluderer:</p>
+                <ul class="space-y-4 text-slate-300">
+                    <li class="flex gap-3"><i class="fa-solid fa-check text-[#c9a66b] mt-1"></i> 1–2 mikrofoner + stativ</li>
+                    <li class="flex gap-3"><i class="fa-solid fa-check text-[#c9a66b] mt-1"></i> PA-anlegg for 100–400 personar</li>
+                    <li class="flex gap-3"><i class="fa-solid fa-check text-[#c9a66b] mt-1"></i> Sceneplass ca. 4 × 3 meter</li>
+                    <li class="flex gap-3"><i class="fa-solid fa-check text-[#c9a66b] mt-1"></i> Strømtilførsel 220V</li>
+                </ul>
+                <p class="mt-12 text-center">Full teknisk rider sendes ved forespørsel.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 grid md:grid-cols-3 gap-12">
+            <div>
+                <div class="flex items-center gap-x-3 mb-6">
+                    <div class="w-8 h-8 bg-amber-400 rounded-full flex items-center justify-center text-black text-xl">TN</div>
+                    <span class="heading-font text-3xl">TOROLF NORDBØ</span>
+                </div>
+                <p class="text-slate-400">Han Innante – Standup, musikk og lattergaranti!</p>
+            </div>
+            <div>
+                <h4 class="uppercase text-sm tracking-widest mb-4 text-[#c9a66b]">Kontakt</h4>
+                <a href="mailto:torolf@innante.no" class="block hover:text-[#c9a66b] mb-2">torolf@innante.no</a>
+                <a href="tel:+4798765432" class="block hover:text-[#c9a66b]">+47 98 76 54 32</a>
+                <p class="text-slate-400 mt-6 text-sm">© 2026 Torolf Nordbø. Alle rettar reservert.</p>
+            </div>
+            <div class="flex justify-end gap-6 text-3xl">
+                <a href="#" aria-label="Facebook" class="hover:text-[#c9a66b]"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.youtube.com/@haninnantetorolfnordb8555" target="_blank" aria-label="YouTube" class="hover:text-[#c9a66b]"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="Instagram" class="hover:text-[#c9a66b]"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script initialization
+        function initializeTailwind() {
+            return {
+                config(userConfig = {}) {
+                    return {
+                        configUser: userConfig,
+                        theme: {
+                            extend: {
+                                colors: {
+                                    amber: '#c9a66b'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        document.documentElement.setAttribute('data-tailwind-config', JSON.stringify(initializeTailwind().config()))
+
+        // Mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu')
+            const hamburger = document.getElementById('hamburger')
+            
+            menu.classList.toggle('hidden')
+            
+            if (!menu.classList.contains('hidden')) {
+                hamburger.innerHTML = `<i class="fa-solid fa-xmark"></i>`
+            } else {
+                hamburger.innerHTML = `<i class="fa-solid fa-bars"></i>`
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'))
+                if (target) {
+                    e.preventDefault()
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    })
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobileMenu')
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        toggleMobileMenu()
+                    }
+                }
+            })
+        })
+
+        console.log('%c✅ Torolf Nordbø nettside lastet – klar for GitHub Pages!', 'color:#c9a66b; font-size:14px')
+    </script>
+</body>
+</html>
